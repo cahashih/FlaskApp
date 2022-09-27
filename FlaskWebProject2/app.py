@@ -8,7 +8,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/api', methods = ['POST', 'PUT'])
+@app.route('/api', methods = ['POST', 'PUT', 'GET'])
 def Post_User():
     if request.method == 'POST':
         f = open('file.txt','a')
