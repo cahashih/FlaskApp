@@ -8,17 +8,6 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
-def hello_world():
-    return 'Hello World!'
-
-@app.route('/api/GET')
-def Get_Users():
-    f = open('file.txt','r')
-    users = f.read();
-    f.close();
-    return users;
-
 @app.route('/api', methods = ['POST', 'PUT'])
 def Post_User():
     if request.method == 'POST':
@@ -57,7 +46,7 @@ def Post_User():
         
 
 @app.route('/api/<int:idd>', methods = ['DELETE'])
-def Put_User(idd):
+def Del_User(idd):
     if request.method == 'DELETE':
         f = open('file.txt', 'w')
         f.close()
